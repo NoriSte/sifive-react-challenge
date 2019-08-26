@@ -1,17 +1,35 @@
 import React from "react";
+import DragAndDrop from "./DragAndDrop";
 import Lesson from "./Lesson";
 
-const Module = props => {
+const Module = ({ data, order }) => {
+  if (!order) {
+    data.lessons.sort((a, b) => a.order - b.order);
+    order = data.lessons.map(item => item.id);
+  }
   return (
     <li>
-      <p>{props.data.title}</p>
-      {props.data.lessons && (
-        <ul>
-          {props.data.lessons.map(item => (
-            <Lesson data={item} key={item.id} />
-          ))}
-        </ul>
-      )}
+      <p>{data.title}</p>
+      <ul>
+        <DragAndDrop
+          defaultOrder={order}
+          render={({ order, refs, onMouseDown, dragggingId, dragOffset }) => {
+            return order.map((id, i) => {
+              const lesson = data.lessons.find(item => item.id === id);
+
+              return (
+                <Lesson
+                  data={lesson}
+                  key={lesson.id}
+                  ref={refs[i]}
+                  onMouseDown={onMouseDown}
+                  y={lesson.id === dragggingId ? dragOffset : 0}
+                />
+              );
+            });
+          }}
+        />
+      </ul>
     </li>
   );
 };

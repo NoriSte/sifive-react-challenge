@@ -22,12 +22,11 @@ function AJAXLoader(state = initialState, action) {
         loading: false
       };
     case "LOAD_SUCCESS":
-      let modules = action.data && action.data.modules ? action.data.modules : state.modules;
       const newState = {
         ...state,
         error: false,
         loading: false,
-        modules: modules.sort((a, b) => a.order - b.order)
+        modules: action.data && action.data.modules ? action.data.modules : state.modules
       };
       return newState;
     default:

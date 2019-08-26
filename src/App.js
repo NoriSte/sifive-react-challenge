@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import "./App.css";
-import Main from "./Main";
+import Modules from "./Modules";
 import { loadData, store } from "./redux";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      <Main />
+      <Modules />
     </Provider>
   );
 }

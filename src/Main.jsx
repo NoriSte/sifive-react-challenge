@@ -1,4 +1,6 @@
+import React from "react";
 import { connect } from "react-redux";
+import Module from "./Module";
 
 const mapStateToProps = state => {
   return {
@@ -17,8 +19,13 @@ const Main = props => {
     return "Empty data";
   }
 
-  const orders = props.modules.map(item => item.order);
-  return JSON.stringify(orders, null, 2);
+  return (
+    <ul>
+      {props.modules.map(item => (
+        <Module data={item} key={item.id} />
+      ))}
+    </ul>
+  );
 };
 
 export default connect(mapStateToProps)(Main);

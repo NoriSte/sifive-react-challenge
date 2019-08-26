@@ -19,8 +19,8 @@ https://sifivelearn-production.s3-us-west-1.amazonaws.com/samples/fe-developer.j
 Data consists of modules and nested lessons.
 
 Please make sure to implement following functionalities, in listed order of priorities:
-- Load data and store in Redux store.
-- User reducer(s) to populate the data into components (including original order property, ascending).
+- [x] Load data and store in Redux store.
+- [x] User reducer(s) to populate the data into components (including original order property, ascending).
 - Display data on the screen as presented in design.
 - Enable sorting of lessons by drag and drop by the icon on the right hand side. Drag and drop has to work between the modules.
 - Enable collapse/expand of a module by using icon on the right hand side. When expanded module “box” get’s highlighted to light green.

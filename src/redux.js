@@ -4,7 +4,7 @@ import ReduxThunk from "redux-thunk"; // no changes here 😀
 const initialState = {
   loading: false,
   error: false,
-  data: {}
+  modules: []
 };
 
 function AJAXLoader(state = initialState, action) {
@@ -22,14 +22,13 @@ function AJAXLoader(state = initialState, action) {
         loading: false
       };
     case "LOAD_SUCCESS":
-      console.log(action.data);
+      let modules = action.data && action.data.modules ? action.data.modules : state.modules;
       const newState = {
         ...state,
         error: false,
         loading: false,
-        data: action.data
+        modules: modules.sort((a, b) => a.order - b.order)
       };
-      console.log(newState);
       return newState;
     default:
       return state;

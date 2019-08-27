@@ -8,7 +8,6 @@ const initialState = {
 };
 
 function AJAXLoader(state = initialState, action) {
-  console.log(action);
   switch (action.type) {
     case "LOAD_START":
       return {

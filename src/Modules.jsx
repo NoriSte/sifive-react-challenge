@@ -25,12 +25,15 @@ const Main = ({ loading, error, modules, order }) => {
   }
 
   return (
-    <ul>
-      {order.map(id => {
-        const module = modules.find(item => item.id === id);
-        return <Module data={module} key={module.id} />;
-      })}
-    </ul>
+    <>
+      You can change the order of the lessons
+      <ul>
+        {order.map(id => {
+          const module = modules.find(item => item.id === id);
+          return <Module data={module} key={module.id} />;
+        })}
+      </ul>
+    </>
   );
 };
 

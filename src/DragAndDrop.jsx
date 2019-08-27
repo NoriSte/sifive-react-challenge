@@ -80,7 +80,8 @@ const DragAndDrop = ({ defaultOrder, render }) => {
       if (element) {
         boundingRects.push({
           id: element.dataset.id,
-          boundingRect: element.getBoundingClientRect()
+          // avoid the performance-killing getBoundingClientRect calls if the drag&drop started
+          boundingRect: dragggingId ? null : element.getBoundingClientRect()
         });
       }
     });

@@ -21,9 +21,10 @@ Data consists of modules and nested lessons.
 Please make sure to implement following functionalities, in listed order of priorities:
 - [x] Load data and store in Redux store.
 - [x] User reducer(s) to populate the data into components (including original order property, ascending).
-- [x] Display data on the screen as presented in design.
-- Enable sorting of lessons by drag and drop by the icon on the right hand side. Drag and drop has to work between the modules.
-- Enable collapse/expand of a module by using icon on the right hand side. When expanded module “box” get’s highlighted to light green.
-- Implement reload content functionality that reloads data from original JSON file (original order).
-- Implement responsiveness (use common sense for scaling, sizing on mobile etc).
-- Make sure that design is reflected 100% on desktop and centered in browser. If you have problems with fonts, please just use Helvetica or Arial.
+- [ ] Display data on the screen as presented in design.
+- [x] Enable sorting of lessons by drag and drop by the icon on the right hand side...
+- [ ] ... Drag and drop has to work between the modules.
+- [ ] Enable collapse/expand of a module by using icon on the right hand side. When expanded module “box” get’s highlighted to light green.
+- [ ] Implement reload content functionality that reloads data from original JSON file (original order).
+- [ ] Implement responsiveness (use common sense for scaling, sizing on mobile etc).
+- [ ] Make sure that design is reflected 100% on desktop and centered in browser. If you have problems with fonts, please just use Helvetica or Arial.
